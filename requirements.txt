@@ -9,11 +9,7 @@ scipy>=0.15.1
 scikit-learn>=0.18
 matplotlib>=1.4.3
 pandas>=0.19
-datetime
-flask_wtf
-flask_login
-wrforms
-wtforms.validators
-PIL
-argparse
-cv2
+Flask-WTF>=0.14.3
+Flask-Login>=0.5.0
+WTForms>=2.3.1
+Pillow>=8.3.1
