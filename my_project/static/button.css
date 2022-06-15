@@ -1,0 +1,63 @@
+
+.contact-fp-wrap {
+
+  height: 60px;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+
+}
+
+.booton {
+
+  fill: transparent;
+  stroke-dasharray: 140 540;
+  stroke-dashoffset: -474;
+  stroke-width: 4px;
+  stroke: url('#logo-gradient');
+}
+
+.booton-text {
+  overflow: hidden;
+  text-align: center;
+  color: #000;
+  font-family: 'Lato';
+  font-size: 22px;
+  letter-spacing: 8px;
+  line-height: 32px;
+  position: relative;
+  top: -48px;
+}
+
+#abc:active {
+  outline: none;
+}
+
+
+#abc:active:after {
+  border: none;
+}
+#abc:click {
+  border: none;
+}
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 6px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.contact-fp-wrap:hover .booton {
+  cursor: pointer;
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+

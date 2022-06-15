@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+	<h1>Future Work</h1>
+	<div class="content-section">
+	  <div class="media">
+	  	<div class="media-body">
+	  	<p class="text-secondary">
+	  		Our work therefore lays a solid foundation for future work. Moving forward, we have identified several avenues for improving our current system. To address the issue of color inconsistency, we can consider incorporating segmentation to enforce uniformity in color within segments. We can also utilize post-processing schemes such as total variation minimization and conditional random fields to achieve a similar end. Finally, redesigning the system around an adversarial network may yield improved results, since instead of focusing on minimizing the cross-entropy loss on a perpixel basis, the system would learn to generate pictures that compare well with real-world images. Based on the quality of results we have produced, the network we have designed and built would be a prime candidate for being the generator in such an adversarial network.
+	  	</p>
+	    </div>
+	  </div>
+	</div>
+{% endblock content %}

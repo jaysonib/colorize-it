@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='button.css') }}">
+	<div class='content-section'>
+		<form method="POST" action=""  enctype="multipart/form-data">
+			{{ form.hidden_tag() }}
+
+			<fieldset class='form-group'>
+				<legend class="border-bottom mb-4"><h1>{{ legend }}</h1></legend>
+				<div class='form-group'>
+					{{ form.title.label(class="form-control-label") }}
+					{% if form.title.errors %}
+						{{ form.title(class='form-control form-control-lg is-invalid') }}
+						<div class='invalid-feedback'>
+							{% for error in form.title.errors %}
+								<span>{{error}}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.title(class='form-control form-control-lg') }}
+					{% endif %}
+				</div>
+				<div class='form-group'>
+					{{ form.content.label(class='form-control-label') }}
+					
+					{% if form.content.errors %}
+						{{ form.content(class='form-control form-control-lg is-invalid') }}
+						<div class='invalid-feedback'>
+							{% for error in form.content.errors %}
+								<span>{{error}}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.content(class='form-control form-control-lg') }}
+					{% endif %}
+				</div>
+				<div class='form-group'>
+					{{ form.visibility.label(class='form-control-label') }}
+					<select name="comp_select" class="selectpicker form-control">
+						{% if visible == '0'	 %}
+				        <option value="0" selected="=true">Public</option>
+				        <option value="1" >Private</option>
+				        {% else%}
+				        <option value="0">Public</option>
+				        <option value="1"  selected="=true">Private</option>
+				        {% endif %}
+				    </select>
+				</div>
+				
+				{% if legend == 'Update Content'%}
+
+					<img class='' height="300" width="300" src='{{image_file_1}}'>
+			    	<img class='' height="300" width="300" src='{{ image_file_2 }}'>
+			    {% else %}
+				<div class='form-group'>
+					{{ form.input_picture.label() }}
+					{{ form.input_picture(class="form-control-file") }}
+					{% if form.input_picture.errors %}
+						{% for error in form.input_picture.errors %}
+							<span class='text-danger'>{{error}}</span></br>
+						{% endfor %}
+					{% endif%}
+				</div>
+				{% endif %}
+			</fieldset>
+			<div class="form-group">
+			<div class="contact-fp-wrap">
+			  <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
+			    <defs>
+			   <linearGradient id="logo-gradient" x1="50%" y1="0%" x2="75%" y2="100%" > 
+			            
+			            <stop offset="0%" stop-color="#F79533">
+			                <animate attributeName="stop-color" values="#F79533; #F37055; #EF4E7B; #A166AB; #5073B8; #1098AD; #07B39B; #6DBA82; #F79533" dur="4s" repeatCount="indefinite"></animate>
+			            </stop>
+
+			            <stop offset="100%" stop-color="#F79533">
+			                <animate attributeName="stop-color" values="#F37055; #EF4E7B; #A166AB; #5073B8; #1098AD; #07B39B; #6DBA82; #F79533; #F37055" dur="4s" repeatCount="indefinite"></animate>
+			            </stop>
+
+			        </linearGradient> 
+			  </defs>
+			    <rect class="booton" height="60" width="320" />
+			  </svg>
+			   <div class="booton-text">{{form.submit(id='abc',style="border:none; background:none")}}</div>
+			</div>
+			</div>
+			
+		</form>
+	</div>
+{% endblock content %}
