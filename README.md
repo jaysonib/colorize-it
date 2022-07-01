@@ -6,7 +6,9 @@ We explore various network architectures, objectives, color spaces, and problem 
 The final classification-based model we build generates colorized images that are significantly more aesthetically-pleasing than those created by the baseline regression-based model, demonstrating the viability of our methodology and revealing promising avenues for future work.
 
 Created BY:
+
 JAY B. SONI
+
 DHAIRYA SAVLEKAR
 
 
